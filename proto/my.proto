@@ -1,0 +1,14 @@
+message Person {
+    required string name = 1;
+    //required int32 id = 2;
+    optional string email = 3;
+    optional string email2 = 4;
+    optional string email3 = 5;
+    optional string email4 = 6;
+}
+
+message MyTask {
+    repeated MyTask person = 1;
+}
+
+
