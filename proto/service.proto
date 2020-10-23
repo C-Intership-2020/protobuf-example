@@ -1,0 +1,32 @@
+syntax = "proto3";
+import "my.proto";
+
+
+
+
+message TaskId { //Request
+    uint32 id = 1;
+}
+
+message TaskData { //Request
+    string data = 1;
+}
+
+message AddSubTaskRequest {
+    TaskId id = 1;
+    TaskData data = 2;
+}
+
+
+message AddSubTaskResponse {
+    string result = 1;
+}
+
+message TaskDTO { //Response
+    TaskId id = 1;
+}
+
+service TaskService {
+    rpc GetTask(TaskId) returns (TaskDTO) {}
+    rpc AddSubTask(AddSubTaskRequest) returns (AddSubTaskResponse) {}
+}
